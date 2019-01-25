@@ -3,10 +3,8 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import {
-  TouchableRipple,
   Button,
   Chip,
-  Text,
   TextInput,
   Caption,
   Headline,
@@ -21,9 +19,9 @@ type Props = {
 
 class TextExample extends React.Component<Props> {
   state = { 
-    uid: null ,
-    uidInput: null,
-    metric: null
+    uid: '' ,
+    uidInput: '',
+    metric: ''
   }
 
   render() {
@@ -38,9 +36,9 @@ class TextExample extends React.Component<Props> {
       : (<View>
         <TextInput label='uid' value={this.state.uid} onChangeText={uid => this.setState({ uidInput: uid })} />
         
-        <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
-        <View><Text>test</Text></View>
-        </TouchableRipple>
+        <Button icon="account-box" mode="contained" dark={true} compact={true}onPress={this.onCommitUid}>
+        use UID
+        </Button>
       </View>)
 
     return (
@@ -56,17 +54,15 @@ class TextExample extends React.Component<Props> {
         <Caption style={styles.text}>metric</Caption>
         <TextInput label='number' value={this.state.metric} onChangeText={this.onChangeMetric} />
         
-        <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
-          <Button icon="gavel" mode="contained" dark={true} compact={true} disabled={!(this.state.uid && this.isValidMetric())} onPress={this.onCommitMetric}>
-          send metric
-          </Button>
-        </TouchableRipple>
+        <Button icon="gavel" mode="contained" dark={true} compact={true} disabled={!(this.state.uid && this.isValidMetric())} onPress={this.onCommitMetric}>
+        send metric
+        </Button>
       </View>
     )
   }
 
   onCommitUid = () => {
-    this.setState({ uid: this.state.uidInput, uidInput: null })
+    this.setState({ uid: this.state.uidInput, uidInput: '' })
   }
 
   isValidMetric = (metric = this.state.metric) => {
@@ -96,28 +92,3 @@ const styles = StyleSheet.create({
 })
 
 export default withTheme(TextExample)
-
-/*import React from 'react'
-import { Platform } from 'react-native'
-import { StyleSheet, Text, View } from 'react-native'
-
-export default class Home extends React.Component {
-    render() {
-        return (
-            <View style={styles.container}>
-            <Text>Open up App.js to start working on your app!</Text>
-            <Text>Running on { Platform.OS }</Text>
-            </View>
-        )
-    }
-}
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-})*/
-  
