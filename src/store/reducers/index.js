@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux'
 
-import Home from './Home'
+import { default as Firebase, initialState as FirebaseInitialState } from './Firebase'
+
+export const initialStates = { Firebase: FirebaseInitialState }
 
 export default combineReducers({
-  Home,
+  Firebase,
 })

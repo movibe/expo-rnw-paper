@@ -1,9 +1,11 @@
+import cloneDeep from 'lodash.clonedeep'
+
 // https://redux.js.org/recipes/structuring-reducers/refactoring-reducer-example
 
 export function updateObject(oldObject, newValues) {
     // Encapsulate the idea of passing a new object as the first parameter
     // to Object.assign to ensure we correctly copy data instead of mutating
-    return Object.assign({}, oldObject, newValues)
+    return cloneDeep(Object.assign({}, oldObject, newValues))
 }
 
 export function updateItemInArray(array, itemId, updateItemCallback) {

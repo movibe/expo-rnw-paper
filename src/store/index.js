@@ -1,6 +1,6 @@
 import { configureStore, getDefaultMiddleware } from 'redux-starter-kit'
 
-import rootReducer from './reducers'
+import { default as rootReducer, initialStates } from './reducers'
 
 function configureAppStore(preloadedState) {
   const store = configureStore({
@@ -16,4 +16,4 @@ function configureAppStore(preloadedState) {
   return store
 }
 
-export default configureAppStore(undefined)
+export default configureAppStore(initialStates)
