@@ -113,6 +113,7 @@ class TextExample extends React.Component<Props> {
   }
 
   /** helper method - generate a valud Date for firebse database
+   * from src https://stackoverflow.com/questions/8362952/output-javascript-date-in-yyyy-mm-dd-hhmsec-format#answer-54187918
    * TODO - refactor. This is a store executable
    */
   getFirebaseDate = (date = new Date()) => date.toISOString().slice(0, 19).replace("T", " ")
