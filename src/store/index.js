@@ -2,6 +2,8 @@ import { configureStore, getDefaultMiddleware } from 'redux-starter-kit'
 
 import { default as rootReducer, initialStates } from './reducers'
 
+import '@styles/app.scss'
+
 function configureAppStore(preloadedState) {
   const store = configureStore({
     reducer: rootReducer,

@@ -21,7 +21,7 @@ type Props = {
   theme: Theme,
 };
 
-class TextExample extends React.Component<Props> {
+class Home extends React.Component<Props> {
   state = { 
     appid: uuid() ,
     appidInput: '',
@@ -160,4 +160,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default withTheme(TextExample)
+export default withTheme(Home)
