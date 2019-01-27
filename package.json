@@ -6,7 +6,8 @@
     "ios": "expo start --ios",
     "eject": "expo eject",
     "web": "react-scripts start",
-    "build-web": "react-scripts build"
+    "build-web": "react-scripts build",
+    "postinstall": "cp copy.into.node_modules.react-scripts.config.webpack.config.js node_modules/react-scripts/config/webpack.config.js"
   },
   "dependencies": {
     "@callstack/async-storage": "^1.1.0",
@@ -34,7 +35,9 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-flow": "^7.0.0",
+    "@babel/runtime": "^7.3.1",
     "babel-preset-expo": "^5.0.0",
     "node-sass": "^4.11.0",
     "react-scripts": "^2.1.3"
