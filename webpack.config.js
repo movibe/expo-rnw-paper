@@ -1,41 +1,41 @@
-const path = require("path")
+const path = require('path');
 
 module.exports = {
-  mode: "development",
-  entry: path.join(__dirname, "App.web.js"),
+  mode: 'development',
+  entry: path.join(__dirname, 'App.web.js'),
   output: {
-    path: path.join(__dirname, "dist"),
-    filename: "app.bundle.js",
+    path: path.join(__dirname, 'dist'),
+    filename: 'app.bundle.js',
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules[/\\](?!react-native-paper|react-native-vector-icons|react-native-safe-area-view)/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             babelrc: false,
             configFile: false,
             presets: [
               [
-                "@babel/preset-env",
+                '@babel/preset-env',
                 {
-                  useBuiltIns: "usage",
+                  useBuiltIns: 'usage',
                 },
               ],
-              "@babel/preset-react",
-              "@babel/preset-flow",
+              '@babel/preset-react',
+              '@babel/preset-flow',
             ],
             plugins: [
-              "@babel/plugin-proposal-class-properties",
-              "@babel/plugin-proposal-object-rest-spread",
+              '@babel/plugin-proposal-class-properties',
+              '@babel/plugin-proposal-object-rest-spread',
               [
-                "module-resolver",
+                'module-resolver',
                 {
                   alias: {
-                    "react-native$": require.resolve("react-native-web"),
+                    'react-native$': require.resolve('react-native-web'),
                   },
                 },
               ],
@@ -45,16 +45,16 @@ module.exports = {
       },
       {
         test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
-        loader: "file-loader",
+        loader: 'file-loader',
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
   devServer: {
-    contentBase: [path.join(__dirname, "public")],
+    contentBase: [path.join(__dirname, 'public')],
     historyApiFallback: true,
   },
-}
+};
