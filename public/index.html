@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Third Party Demo</title>
+  <meta charset="utf-8">
+  <meta content="IE=edge"
+        httpequiv="X-UA-Compatible">
+  <meta content="width=device-width,minimum-scale=1,initial-scale=1"
+        name="viewport">
+  <title>App</title>
+  <style>
+        html,
+        body,
+        #root {
+            height: 100%;
+        }
+
+        #root {
+            display: flex;
+            flex-direction: column;
+        }
+  </style>
 </head>
 <body>
-    <div id="react-native-web-app"></div>
+  <div id="root"></div>
+  <script src="app.bundle.js"></script>
 </body>
 </html>
