@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { FlatList } from 'react-native';
-import { List, Divider, withTheme, type Theme } from 'react-native-paper';
+import { List, Divider, withTheme, type Theme, Appbar } from 'react-native-paper'
 import ActivityIndicatorExample from './Examples/ActivityIndicatorExample';
 
 import AppbarExample from './Examples/AppbarExample';
@@ -74,9 +74,15 @@ export const examples = {
 const data = Object.keys(examples).map(id => ({ id, data: examples[id] }));
 
 class ExampleList extends React.Component<Props> {
-  static navigationOptions = {
-    title: 'Examples',
-  };
+  static navigationOptions = props=> ({
+      // title: 'Examples',
+      header: (
+          <Appbar.Header>
+              <Appbar.Action icon="menu" onPress={() => props.navigation.openDrawer()} />
+              <Appbar.Content title="Examples" />
+          </Appbar.Header>
+      ),
+  });
 
   _renderItem = ({ item }) => (
     <List.Item

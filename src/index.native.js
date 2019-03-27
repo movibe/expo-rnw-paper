@@ -11,7 +11,7 @@ import {
 } from "react-native-paper"
 import createReactContext from "create-react-context"
 import { createAppContainer, createDrawerNavigator } from "react-navigation"
-import RootNavigator from "./RootNavigator"
+import RootNavigator from "./RootNavigator.native"
 import DrawerItems from "./DrawerItems"
 
 type State = {
@@ -51,7 +51,7 @@ export default class PaperExample extends React.Component<{}, State> {
   }
 
   async componentDidMount() {
-    StatusBar.setBarStyle("light-content")
+    StatusBar.setBarStyle("ligh-content")
 
     try {
       const prefString = await AsyncStorage.getItem("preferences")
