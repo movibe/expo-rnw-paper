@@ -5,11 +5,14 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "web": "webpack-dev-server --open"
+    "web": "webpack-dev-server --open",
+    "lint": "eslint src/**/*.js"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
     "css-loader": "^2.1.1",
+    "eslint": "^5.15.3",
+    "eslint-config-callstack-io": "^1.1.2",
     "expo": "^32.0.6",
     "file-loader": "^3.0.1",
     "react": "16.5.0",
@@ -36,6 +39,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "babel-preset-expo": "^5.1.1",
+    "eslint-plugin-react-native": "^3.6.0",
     "react-app-rewired": "^2.1.1",
     "react-scripts": "^2.1.8",
     "webpack-cli": "^3.3.0"
